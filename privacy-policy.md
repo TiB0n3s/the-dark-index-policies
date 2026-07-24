@@ -71,4 +71,4 @@ Questions about this policy or The Dark Index's privacy practices:
 [support@deadstarlabs.com](mailto:support@deadstarlabs.com)
 
 Support information is published at the
-[support policy page](/the-dark-index-policies/support-policy/).
+[support policy page](../support-policy/).
