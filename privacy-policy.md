@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: July 27, 2026
+Effective date: July 28, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the Core beta build.
@@ -27,10 +27,16 @@ described in "Book metadata lookup" below.
 When you scan or add a book that is not already in your library, the app
 sends **only the book's ISBN** to a catalogue lookup service operated by Dead
 Star Labs, to retrieve publicly available edition details — title, author,
-format, and similar fields — from Open Library and the Library of Congress.
-This is a core part of how the app fills in a new book and has no on/off
-setting; it happens only for books not already in your collection, and it
-never runs for a book you already own.
+format, cover image address, and similar fields — from Open Library and the
+Library of Congress. This is a core part of how the app fills in a new book
+and has no on/off setting; it happens only for books not already in your
+collection, and it never runs for a book you already own — with one
+exception, entirely under your control: if you explicitly run **"Find
+missing covers"** in Settings, the app sends the ISBNs of books already in
+your library that have no cover image, one at a time, to the same service,
+to retrieve their cover addresses. That action states how many ISBNs it will
+send before anything is sent, runs only when you start it, and sends nothing
+else about your library. It never runs on its own.
 
 No account, device identifier, advertising identifier, or IP address is
 retained by this lookup. The service does not know who is asking, and there
