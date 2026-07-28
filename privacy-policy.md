@@ -66,15 +66,34 @@ apply its own privacy practices.
 The Core beta does not collect usage analytics, use advertising identifiers,
 serve advertising, or remotely log collection titles or searches.
 
-## Cloud and subscriptions
+## Subscriptions and purchases
 
-Archivist and Collector capabilities are not operational in the Core beta. No
-cloud account is created automatically, and the beta does not upload
-collection data to a Dark Index service — the ISBN lookup described above is
-the only outbound network request the app makes, and it never carries
-collection data, only the ISBN itself. This policy will be revised before
-account, billing, cloud, notification, or remote-diagnostics features are
-enabled.
+Archivist subscriptions are purchased through Apple's App Store or Google
+Play. The purchase happens entirely in your store account: Dead Star Labs
+receives no payment details, creates no account of you, and operates no
+purchase server — whether a subscription is active is determined by your
+store, on your device, and the app keeps only your current entitlement
+locally so it works offline. Apple's and Google's own privacy terms govern
+the transaction, as with any store purchase. Managing or cancelling happens
+in your store's subscription settings.
+
+## Cover images
+
+When your plan shows photo book covers, the app fetches the cover image
+from Open Library's public covers service (`covers.openlibrary.org`), the
+same way any app loads an image from the web: the request carries the
+image's address and your device's network address, and no account or
+identifier. Without a plan that shows photo covers, no such request is
+made.
+
+## Cloud features
+
+Cloud backup, synchronization, and Collector capabilities are not yet
+operational. No cloud account is created, and the app does not upload
+collection data to a Dark Index service — the outbound requests it makes
+are the ISBN lookups described above and the cover-image fetches described
+here, and none carries collection data. This policy will be revised before
+account, cloud, notification, or remote-diagnostics features are enabled.
 
 ## Retention and deletion
 
