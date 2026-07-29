@@ -8,7 +8,10 @@ permalink: /privacy-policy/
 Effective date: July 28, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
-book collection. This policy describes the Core beta build.
+book collection. This policy describes the current build: the Core experience,
+which is entirely on your device apart from ISBN lookup, and the Archivist
+capabilities that are operational — including encrypted cloud backup, which is
+off unless a subscriber turns it on.
 
 ## Information stored on your device
 
@@ -17,10 +20,12 @@ locations, notes, tags, lists, and preferences on your device. This information
 supports offline collection access, browsing, searching, editing, duplicate
 warnings, and manual export.
 
-The Dark Index does not receive this information: there is no account, cloud
-backup, or synchronization, and your collection records, shelf names, notes,
-tags, and search activity never leave your device. The one exception is
-described in "Book metadata lookup" below.
+By default The Dark Index does not receive this information: no account
+exists, nothing is uploaded, and your collection records, shelf names, notes,
+tags, and search activity never leave your device. There are two exceptions,
+both described below. **Book metadata lookup** is part of adding a book and
+sends only an ISBN. **Encrypted cloud backup** is off until you set it up,
+and what it sends cannot be read by anyone but you.
 
 ## Book metadata lookup
 
@@ -86,28 +91,95 @@ image's address and your device's network address, and no account or
 identifier. Without a plan that shows photo covers, no such request is
 made.
 
-## Cloud features
+## Encrypted cloud backup
 
-Cloud backup, synchronization, and Collector capabilities are not yet
-operational. No cloud account is created, and the app does not upload
-collection data to a Dark Index service — the outbound requests it makes
-are the ISBN lookups described above and the cover-image fetches described
-here, and none carries collection data. This policy will be revised before
-account, cloud, notification, or remote-diagnostics features are enabled.
+Encrypted backup is an Archivist capability, and it is **off until you set
+it up**. Until then nothing is uploaded, no account exists, and the app
+makes no request to the backup service at all.
+
+**Your collection is encrypted on your device before it leaves it.** What
+travels, and what the service stores, is ciphertext. Dead Star Labs holds no
+key that opens it. An operator with full access to the server's database,
+its files, and its source code can demonstrate only encrypted bytes.
+
+**Setting up backup creates an account, and that account has no idea who you
+are.** It is identified by a value derived from your recovery key. We do not
+ask for, and the service never receives, an email address, a name, a phone
+number, or a device identifier.
+
+| The backup service stores | It never stores |
+|---|---|
+| Your encrypted snapshot | Your collection in readable form |
+| An account identifier | Your name, email, or phone number |
+| A hash of your authentication key | Your recovery key, or anything that could open your backup |
+| When your subscription runs through | Your IP address |
+| A salted hash of your store transaction | Your raw store receipt |
+| The size and date of your snapshot | The titles, notes, or shelves inside it |
+
+The service is hosted in the European Union, on separate infrastructure from
+the ISBN lookup service described above, with no shared database or
+credentials. The two cannot be combined to link a book you looked up with a
+backup you made. As with the lookup service, the reverse proxy in front of
+it logs no IP addresses, for any request, matched or not.
+
+**Your recovery key is the only way in, and we cannot recover it for you.**
+There is no password reset, no email recovery, and no support process that
+can restore access — because any such process would mean we could read your
+backup, and we cannot. If you lose the recovery key, the backup becomes
+permanently unreadable. This is shown once during setup and requires you to
+confirm you have written it down.
+
+**A store transaction is linked to your account by a salted hash**, so that
+storage is provided to subscribers rather than to anyone who asks. The raw
+receipt is not stored, and the hash cannot be reversed into your store
+account.
+
+**If your subscription lapses, your backup is not deleted immediately.** It
+remains restorable for 90 days, during which new backups will not upload.
+After 90 days the stored snapshot is deleted.
+
+**Deleting your backup deletes everything associated with it** — the
+encrypted snapshot, the account record, and the transaction hash. You can do
+this at any time from Settings, and it does not require an active
+subscription: the person most likely to want their data removed is the one
+who has stopped paying for it. Your collection stays on your device. See
+[how to delete your account and data](../delete-account/).
+
+**Nothing uploads on its own.** Backup runs when you choose to run it. There
+is no schedule, no background upload, and no automatic sync — so the way to
+stop backing up is simply to stop, and what is already stored stays until you
+delete it.
+
+Restoring on a second device is not synchronization: two devices backing up
+one account overwrite each other's snapshots, and the app says so before you
+restore.
+
+## Cloud features not yet operational
+
+Multi-device synchronization, version history, and Collector capabilities are
+not operational. This policy will be revised before those, or notification or
+remote-diagnostics features, are enabled.
 
 ## Retention and deletion
 
-Core beta data remains on the device until you edit or delete records, clear
+On-device data remains on the device until you edit or delete records, clear
 the app's data, or remove the app. Manual CSV and JSON export is available
 without a subscription.
 
-Because the Core beta has no Dark Index account or remote collection store,
-there is no remote account record to delete.
+**If you have not set up encrypted backup, there is no remote record of you
+to delete** — no account exists and nothing has been uploaded.
+
+If you have set up encrypted backup, deleting it removes the encrypted
+snapshot, the account record, and the store-transaction hash. A lapsed
+subscription retains the snapshot for 90 days, then deletes it. Full steps
+are on the [account and data deletion page](../delete-account/).
 
 ## Children
 
 The app is not designed to collect personal information from children. The
-Core beta does not operate an account or remote collection service.
+only account it can create is the encrypted-backup account described above,
+which holds no name, email, or other personal information, and which exists
+only if an adult subscriber sets it up.
 
 ## Changes
 
