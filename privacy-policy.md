@@ -35,13 +35,31 @@ Star Labs, to retrieve publicly available edition details — title, author,
 format, cover image address, and similar fields — from Open Library and the
 Library of Congress. This is a core part of how the app fills in a new book
 and has no on/off setting; it happens only for books not already in your
-collection, and it never runs for a book you already own — with one
-exception, entirely under your control: if you explicitly run **"Find
-missing covers"** in Settings, the app sends the ISBNs of books already in
-your library that have no cover image, one at a time, to the same service,
-to retrieve their cover addresses. That action states how many ISBNs it will
-send before anything is sent, runs only when you start it, and sends nothing
-else about your library. It never runs on its own.
+collection.
+
+For books you already own, the app sends ISBNs to the same service — always
+one at a time, and never anything else about your library — in exactly these
+cases:
+
+- **"Find missing covers"** in Settings sends the ISBNs of owned books that
+  have no cover image, to retrieve their cover addresses. It states how many
+  ISBNs it will send before anything is sent and runs only when you start it.
+- **On plans that include photo covers**, the app fetches missing covers
+  automatically, once each time it opens — showing jackets is what those
+  plans are for, and this is that feature working. If every book already has
+  a cover, nothing is sent. On other plans, covers are never fetched
+  automatically.
+- **"Update from the catalogue"** in Settings brings your existing records
+  up to date: it fills in facts a record is missing and refreshes the
+  thematic terms used to suggest related books on your device. It states the
+  count before sending and runs only when you start it.
+- **"Update when the app opens"**, a separate Settings switch that is **off
+  unless you turn it on**, runs that same update automatically once each
+  time the app opens.
+
+No request in any of these cases carries a shelf name, note, tag, reading
+state, or anything identifying; each carries one ISBN and nothing more, with
+no indication that the books belong to one collection.
 
 No account, device identifier, advertising identifier, or IP address is
 retained by this lookup. The service does not know who is asking, and there
