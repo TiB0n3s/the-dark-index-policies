@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: July 28, 2026
+Effective date: August 5, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the current build: the Core experience,
