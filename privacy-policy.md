@@ -22,15 +22,18 @@ warnings, and manual export.
 
 By default The Dark Index does not receive this information: no account
 exists, nothing is uploaded, and your collection records, shelf names, notes,
-tags, and search activity never leave your device. There are three exceptions,
+tags, and search activity never leave your device. There are four exceptions,
 all described below. **Book metadata lookup** is part of adding a book: it
 sends an ISBN, or — if you tap **Find editions** because you cannot scan one —
 the title and author you typed. **Encrypted cloud backup** is off until you
 set it up, and what it sends cannot be read by anyone but you. **Telling the
 catalogue something is wrong** happens only when you choose to report a
-correction to a book's shared record.
+correction to a book's shared record. **Related books** is the one request the
+app makes on its own: opening a book sends that book's ISBN, and nothing else,
+to fetch a list of similar titles.
 
 ## Book metadata lookup
+<!-- discloses: edition-lookup -->
 
 When you scan or add a book that is not already in your library, the app
 sends **only the book's ISBN** to a catalogue lookup service operated by Dead
@@ -76,6 +79,7 @@ reverse proxy in front of it does not log the IP address of any request,
 matched or not, for the same reason.
 
 ## Find editions
+<!-- discloses: edition-search -->
 
 Not every book has a barcode you can scan, and not every phone has a working
 camera. So there is a search you can run from a title and an author instead,
@@ -99,6 +103,7 @@ The service keeps counts of how many searches ran and roughly how many
 results they returned; **it does not keep the titles and authors themselves**.
 
 ## Telling the catalogue something is wrong
+<!-- discloses: correction-report -->
 
 The catalogue's record for a book is shared — everyone using the app sees the
 same one. If it is wrong, you can say so: open a book and tap **Something
@@ -126,6 +131,27 @@ else.
 
 A report that has been decided is kept, as the record of what was claimed and
 what was decided about it.
+
+## Books related to the one you are looking at
+<!-- discloses: related-books -->
+
+When you open a book that has an ISBN, the app asks the catalogue which other
+books are related to it, so it can show a short list on that screen.
+
+This one deserves plain language, because it is **the only request the app
+makes without you doing anything**. Everything else described above waits for
+a tap, or for a setting you turned on yourself. This one runs when the screen
+opens.
+
+- **It sends one ISBN and nothing else.** No account, device identifier,
+  session, shelf, note, reading state or tag, and nothing saying you own the
+  book — even though, on this screen, you usually do.
+- **Nothing is kept about which books you opened.** The service stores no
+  record of the request, and the reverse proxy in front of it logs no
+  addresses. There is nothing that could join one opened book to the next, and
+  no way to build a picture of what you read out of a series of these.
+- **It fails quietly.** If the catalogue cannot be reached, the related-books
+  list does not appear and the rest of the screen works exactly as before.
 
 ## Camera access
 
@@ -166,6 +192,8 @@ identifier. Without a plan that shows photo covers, no such request is
 made.
 
 ## Encrypted cloud backup
+<!-- discloses: backup-account -->
+<!-- discloses: backup-snapshot -->
 
 Encrypted backup is an Archivist capability, and it is **off until you set
 it up**. Until then nothing is uploaded, no account exists, and the app
