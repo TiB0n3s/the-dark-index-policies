@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: August 5, 2026
+Effective date: August 7, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the current build: the Core experience,
@@ -22,16 +22,20 @@ warnings, and manual export.
 
 By default The Dark Index does not receive this information: no account
 exists, nothing is uploaded, and your collection records, shelf names, notes,
-tags, and search activity never leave your device. There are two exceptions,
-both described below. **Book metadata lookup** is part of adding a book and
-sends only an ISBN. **Encrypted cloud backup** is off until you set it up,
-and what it sends cannot be read by anyone but you.
+tags, and search activity never leave your device. There are three exceptions,
+all described below. **Book metadata lookup** is part of adding a book: it
+sends an ISBN, or — if you tap **Find editions** because you cannot scan one —
+the title and author you typed. **Encrypted cloud backup** is off until you
+set it up, and what it sends cannot be read by anyone but you. **Telling the
+catalogue something is wrong** happens only when you choose to report a
+correction to a book's shared record.
 
 ## Book metadata lookup
 
 When you scan or add a book that is not already in your library, the app
 sends **only the book's ISBN** to a catalogue lookup service operated by Dead
-Star Labs, to retrieve publicly available edition details — title, author,
+Star Labs (the one exception is **Find editions**, described below, which you
+have to tap), to retrieve publicly available edition details — title, author,
 format, cover image address, and similar fields — from Open Library and the
 Library of Congress. This is a core part of how the app fills in a new book
 and has no on/off setting; it happens only for books not already in your
@@ -70,6 +74,58 @@ it knows when to refresh a stale entry; it does not keep a log of individual
 requests or scan times. The service is hosted in the European Union, and the
 reverse proxy in front of it does not log the IP address of any request,
 matched or not, for the same reason.
+
+## Find editions
+
+Not every book has a barcode you can scan, and not every phone has a working
+camera. So there is a search you can run from a title and an author instead,
+offered in two places: **Find editions**, beneath the title and author you
+type when adding a book by hand, and **Find edition**, on a book you already
+saved without an ISBN. Both say what they will send before you tap.
+
+Tapping either sends **that title and that author, and nothing else**, to the
+same catalogue service, which asks Open Library which printings exist and
+returns a list for you to look through.
+
+- **Typing sends nothing.** There is no request until you tap.
+- **The request says nothing about you.** No account, device identifier,
+  session, shelf, note, reading state or tag, and nothing saying you own the
+  book or want it. The service will not accept those fields even if something
+  tried to send them.
+- **Nothing is chosen for you.** The service ranks the printings and picks
+  none. Only your own choice attaches an ISBN to your copy.
+
+The service keeps counts of how many searches ran and roughly how many
+results they returned; **it does not keep the titles and authors themselves**.
+
+## Telling the catalogue something is wrong
+
+The catalogue's record for a book is shared — everyone using the app sees the
+same one. If it is wrong, you can say so: open a book and tap **Something
+wrong? Tell the catalogue**. That sends the book's ISBN, which field is
+wrong, what you say it should be, and one term saying how you know. Nothing
+else.
+
+- **It is not the same as editing your own copy.** Editing a book on its own
+  screen changes your copy, on your device, and nobody else sees it. A report
+  asks for the shared record to change, and the app says so where you send
+  one.
+- **Nothing changes because you said it.** Every report is reviewed before
+  anything is written, and may be declined. Your own copy is untouched either
+  way.
+- **"How do you know" is a fixed list, not a box to write in.** The cover,
+  the title page, the copyright page, the spine, "this book is not part of a
+  series", or "this ISBN is not this book at all". There is no free-text
+  field, so a report cannot carry a comment about a person or anything that
+  is not the book in your hand.
+- **The request says nothing about you.** No account, device identifier,
+  session, shelf, note, reading state or tag, and nothing saying you own the
+  book. The service does not know who sent a report and cannot tell one
+  sender from another — the address is stripped before the request reaches
+  it.
+
+A report that has been decided is kept, as the record of what was claimed and
+what was decided about it.
 
 ## Camera access
 
