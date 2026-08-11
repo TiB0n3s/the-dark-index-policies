@@ -16,9 +16,11 @@ off unless a subscriber turns it on.
 ## Information stored on your device
 
 The app stores collection records, book and edition information, physical-copy
-locations, notes, tags, lists, and preferences on your device. This information
-supports offline collection access, browsing, searching, editing, duplicate
-warnings, and manual export.
+locations, notes, tags, lists, and preferences on your device. If you add
+owner evidence for a copy, it also stores acquisition details, receipt or lot
+references, dated condition observations, and the private photographs you
+choose. This information supports offline collection access, browsing,
+searching, editing, duplicate warnings, backup, and owner-requested export.
 
 By default The Dark Index does not receive this information: no account
 exists, nothing is uploaded, and your collection records, shelf names, notes,
@@ -32,9 +34,11 @@ correction to a book's shared record. **Related books** is the one request the
 app makes on its own: opening a book sends that book's ISBN, and nothing else,
 to fetch a list of similar titles.
 
-The code also contains a not-yet-sold Collector identification capability.
-When that exact entitlement is available, it makes the request described
-below only after you tap its action.
+The code also contains two not-yet-sold Collector capabilities. Variant
+identification makes the request described below only after you tap its
+action. Collection documentation creates PDF, CSV, and JSON files entirely
+on your device and makes no request at all. Each appears only with its exact
+entitlement.
 
 ## Book metadata lookup
 <!-- discloses: edition-lookup -->
@@ -189,10 +193,42 @@ video, or camera frames. You can deny camera access and enter a book manually.
 
 ## Files you choose
 
-When you export data, you choose where the CSV or JSON file is sent or saved.
-When structured import becomes available to an entitled user, the user chooses
-the JSON file. The destination application or storage provider you select may
-apply its own privacy practices.
+When you export data, you choose where the file is sent or saved. Core manual
+exports are CSV or JSON. When structured import is available to an entitled
+user, the user chooses the JSON file. The destination application or storage
+provider you select may apply its own privacy practices.
+
+## Local collection documentation
+<!-- discloses: insurance-documentation -->
+
+The code contains a not-yet-sold Collector action called **Collection
+documentation**. If that exact entitlement is enabled, it lets you select
+owned copies and creates three files together: a human-readable PDF and
+machine-readable CSV and JSON records.
+
+- **Generation stays on your device and works offline.** No collection
+  record, owner evidence, photo, note, identifier, or generated file is sent
+  to Dead Star Labs, an insurer, an appraiser, or a valuation provider.
+- **You select the copies.** Records explicitly marked not owned are excluded.
+  A package counts excluded, duplicate, uncertain, and unpriced records
+  separately. A missing valuation is never treated as zero.
+- **The files can contain private evidence.** Depending on what you recorded,
+  that can include acquisition date and source, price paid, receipt or lot
+  reference, condition history, notes, and private photographs. JSON retains
+  the complete photo bytes. The PDF and CSV identify the same evidence in
+  human- and machine-readable forms.
+- **You choose the destination.** The operating-system share or save sheet
+  opens only after generation. Once you choose another application or storage
+  provider, that destination controls its copy under its own privacy terms.
+- **Cancellation does not lock existing files or the collection.** Ending a
+  subscription stops creating a new package; files you already saved remain
+  ordinary PDF, CSV, and JSON files, and the underlying local collection and
+  owner evidence remain readable and editable.
+
+Every package says that it is a dated collection inventory and estimate, not
+a professional appraisal, proof of ownership, proof of coverage, a warranty
+of value, or an insurance claim. The app does not file, submit, negotiate, or
+track claims and does not assert insurance coverage.
 
 ## Analytics and advertising
 
@@ -287,17 +323,20 @@ restore.
 ## Cloud features not yet operational
 
 Multi-device synchronization, version history, and the Collector plan are not
-operational in the shipping configuration. Variant identification is present
-behind an entitlement that is not currently sold or granted. This policy is
-published before that entitlement can be enabled and will be revised before
-other Collector capabilities, notifications, or remote diagnostics are
+operational in the shipping configuration. Variant identification and local
+collection documentation are present behind entitlements that are not
+currently sold or granted. This policy is published before either entitlement
+can be enabled and will be revised before other Collector capabilities,
+notifications, remote diagnostics, or any external valuation transmission are
 enabled.
 
 ## Retention and deletion
 
 On-device data remains on the device until you edit or delete records, clear
-the app's data, or remove the app. Manual CSV and JSON export is available
-without a subscription.
+the app's data, or remove the app. Manual Core CSV and JSON export is available
+without a subscription. A PDF, CSV, or JSON documentation file already saved
+outside the app is controlled by its chosen destination and remains readable
+after a subscription ends.
 
 **If you have not set up encrypted backup, there is no remote record of you
 to delete** — no account exists and nothing has been uploaded.
