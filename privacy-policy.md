@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: August 7, 2026
+Effective date: August 11, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the current build: the Core experience,
@@ -31,6 +31,10 @@ catalogue something is wrong** happens only when you choose to report a
 correction to a book's shared record. **Related books** is the one request the
 app makes on its own: opening a book sends that book's ISBN, and nothing else,
 to fetch a list of similar titles.
+
+The code also contains a not-yet-sold Collector identification capability.
+When that exact entitlement is available, it makes the request described
+below only after you tap its action.
 
 ## Book metadata lookup
 <!-- discloses: edition-lookup -->
@@ -131,6 +135,30 @@ else.
 
 A report that has been decided is kept, as the record of what was claimed and
 what was decided about it.
+
+## Identifying a special edition
+<!-- discloses: variant-identification -->
+
+If your plan includes variant identification, tapping **Identify edition**
+sends the book's ISBN to the catalogue and retrieves the canonical variants
+known for that work. The app then compares those public facts with the traits
+you recorded for the physical copy on your device.
+
+- **Your copy traits stay on your device.** Sprayed or stenciled edges, foil,
+  numbering, lettering, signature form, retailer or subscription-box source,
+  and printing are never included in the request.
+- **The request sends one ISBN and nothing else.** No entitlement proof,
+  account, device identifier, session, shelf, note, reading state, tag, or
+  collection context is sent. The endpoint refuses query parameters.
+- **Nothing is guessed.** A match is stored only when exactly one undisputed
+  canonical variant fits. An unavailable, disputed, ambiguous, or no-match
+  result changes nothing.
+- **Opening and editing send nothing.** The request happens only when you tap
+  the identification action.
+
+The stored match includes the catalogue source, confidence, and observation
+date that supported it. It remains in your local copy record if the
+subscription later lapses.
 
 ## Books related to the one you are looking at
 <!-- discloses: related-books -->
@@ -258,9 +286,12 @@ restore.
 
 ## Cloud features not yet operational
 
-Multi-device synchronization, version history, and Collector capabilities are
-not operational. This policy will be revised before those, or notification or
-remote-diagnostics features, are enabled.
+Multi-device synchronization, version history, and the Collector plan are not
+operational in the shipping configuration. Variant identification is present
+behind an entitlement that is not currently sold or granted. This policy is
+published before that entitlement can be enabled and will be revised before
+other Collector capabilities, notifications, or remote diagnostics are
+enabled.
 
 ## Retention and deletion
 
