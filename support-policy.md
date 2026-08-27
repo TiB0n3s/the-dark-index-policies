@@ -14,11 +14,11 @@ entry, browsing, searching, duplicate warnings, and manual CSV/JSON export.
 Archivist subscriptions and opt-in encrypted cloud backup are operational on
 the supported store platforms.
 
-Multi-device synchronization, version history, alerts, and the Collector plan
-are unavailable in the shipping configuration. Variant identification and
-local collection documentation exist behind exact Collector entitlements that
-are not currently sold or granted. Their support procedures below become
-customer-facing only after the remaining Collector gates are approved.
+Multi-device synchronization, version history, and alerts are unavailable in
+the shipping configuration. The Collector plan is sold on the iOS App Store and
+on Google Play; variant identification and local collection documentation are
+enabled by its exact entitlements, and their support procedures below are
+customer-facing.
 
 ## User recovery steps
 

@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: August 11, 2026
+Effective date: August 27, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the current build: the Core experience,
@@ -34,7 +34,7 @@ correction to a book's shared record. **Related books** is the one request the
 app makes on its own: opening a book sends that book's ISBN, and nothing else,
 to fetch a list of similar titles.
 
-The code also contains two not-yet-sold Collector capabilities. Variant
+The app also contains two Collector capabilities. Variant
 identification makes the request described below only after you tap its
 action. Collection documentation creates PDF, CSV, and JSON files entirely
 on your device and makes no request at all. Each appears only with its exact
@@ -201,8 +201,8 @@ provider you select may apply its own privacy practices.
 ## Local collection documentation
 <!-- discloses: insurance-documentation -->
 
-The code contains a not-yet-sold Collector action called **Collection
-documentation**. If that exact entitlement is enabled, it lets you select
+The app contains a Collector action called **Collection
+documentation**. With that exact entitlement, it lets you select
 owned copies and creates three files together: a human-readable PDF and
 machine-readable CSV and JSON records.
 
@@ -322,13 +322,12 @@ restore.
 
 ## Cloud features not yet operational
 
-Multi-device synchronization, version history, and the Collector plan are not
-operational in the shipping configuration. Variant identification and local
-collection documentation are present behind entitlements that are not
-currently sold or granted. This policy is published before either entitlement
-can be enabled and will be revised before other Collector capabilities,
-notifications, remote diagnostics, or any external valuation transmission are
-enabled.
+Multi-device synchronization and version history are not operational in the
+shipping configuration. The Collector plan is sold on the iOS App Store and on
+Google Play; variant identification and local collection documentation are
+enabled by its entitlements, and both are disclosed above. This policy will be
+revised before notifications, remote diagnostics, or any external valuation
+transmission are enabled.
 
 ## Retention and deletion
 
