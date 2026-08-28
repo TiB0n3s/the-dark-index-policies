@@ -5,7 +5,7 @@ permalink: /privacy-policy/
 
 # The Dark Index Privacy Policy
 
-Effective date: August 27, 2026
+Effective date: August 28, 2026
 
 The Dark Index is a private-first mobile application for cataloguing a physical
 book collection. This policy describes the current build: the Core experience,
@@ -170,10 +170,11 @@ subscription later lapses.
 When you open a book that has an ISBN, the app asks the catalogue which other
 books are related to it, so it can show a short list on that screen.
 
-This one deserves plain language, because it is **the only request the app
-makes without you doing anything**. Everything else described above waits for
-a tap, or for a setting you turned on yourself. This one runs when the screen
-opens.
+This one is worth being plain about, because it is one of **two requests the
+app may make without you doing anything**. Everything else described above
+waits for a tap, or for a setting you turned on yourself. This one runs when
+the screen opens; the other automatic request, for entitled market pricing, is
+described next.
 
 - **It sends one ISBN and nothing else.** No account, device identifier,
   session, shelf, note, reading state or tag, and nothing saying you own the
@@ -184,6 +185,33 @@ opens.
   no way to build a picture of what you read out of a series of these.
 - **It fails quietly.** If the catalogue cannot be reached, the related-books
   list does not appear and the rest of the screen works exactly as before.
+
+## Sourced market pricing
+<!-- discloses: market-pricing -->
+
+When the Collector entitlement for valuation snapshots is present and you open
+a book that has an ISBN, the app asks the catalogue for sourced public market
+observations for that ISBN. The returned evidence can include active listings,
+completed sales, and auction results. It is displayed separately from the
+valuation history you record for your own physical copy.
+
+- **It sends one ISBN and nothing else.** No entitlement proof, account, device
+  identifier, session, copy condition, acquisition price, shelf, note, reading
+  state, tag, or collection context is included.
+- **It runs automatically when the book screen opens.** There is no separate
+  tap or setting. Without the exact Collector entitlement, the app does not
+  make this request and shows no teaser for it.
+- **Only publicly reusable evidence is returned.** Private research notes and
+  sources whose terms do not allow catalogue publication are excluded.
+- **It is market evidence, not an appraisal.** A listing or sale for the same
+  ISBN does not establish the value of your copy. The app does not certify a
+  value for insurance, tax, estate, lending, or sale purposes.
+- **Nothing is kept about which books you opened.** The service and its reverse
+  proxy retain no request or network-address record that could join one lookup
+  to another.
+
+If the catalogue cannot be reached, this section simply does not appear and the
+rest of the book screen continues to work.
 
 ## Camera access
 
